@@ -17,7 +17,7 @@ After clonning the repository, `.env` file should be set.
 Please specify your 
 - `HUGGINGFACE_TOKEN=""` (**required**)
 
-- `WANDB_API_KEY=""` for tracking the runtime. (optional)
+- `WANDB_API_KEY=""` (optional)
 
 ## extract_grads.sbatch
 
