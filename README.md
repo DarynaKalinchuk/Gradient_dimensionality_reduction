@@ -84,7 +84,7 @@ In `extract_gradients.py`, I mainly cleaned up the structure a bit, made argumen
 
 To submit a job for calculation of influence scores, `exp.sbatch` (which runs `explain.py`) is used. 
 
-**Example commands**:
+**Example command**:
 
 > `sbatch exp.sbatch both daryna3325/sampled-tulu-1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/sampled-tulu-1000/train/main/0_1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/HFH4_ultrachat_200k_first100_samples/test_sft/main/0_100 OLMO/normal yes`
 
