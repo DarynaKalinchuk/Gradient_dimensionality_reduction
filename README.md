@@ -143,4 +143,5 @@ Below are time estimates for different dimensions, based on the corresponding ru
 
 The `.ipynb` codes are fully reproducible.
 
+Reproducibility of SLURM codes could have been improved but I realized this too late to be able to obtain new results. Furthermore, my understanding is that it cannot be made perfectly reproducible due to CUDA non-determinism and floating-point computation variability.
 
