@@ -111,7 +111,7 @@ To submit a jon for calculation of influence scores, `exp.sbatch` (which runs `e
 # Results linking
 
 - **Gradient calculation results** are saved as `.pt` files.  
-- **Explainability results** are saved as `.json` files.
+- **Explainability results** are saved a `.json` file.
 
 Both outputs are linked to the corresponding dataset samples as follows:  
 
@@ -124,4 +124,22 @@ If the JSON files were created with `mapped = yes`:
 
 # Runtime estimate
 
+I have done a few runs on (9000 samples), which took about 1h 15 min on average.
+
+The original data set (`allenai/tulu-v2-sft-mixture-olmo-2048`) has ~381,000 rows => **~53 hours** to obtain full gradients.
+
+As for projected gradients:
+
+| Dimension   | Estimated Time |
+|-------------|----------------|
+| 2048000     | **~212 days**  |
+| 204800      | **~23 days**   |
+| 16384       | **~83 hours**  |
+| 8192        | **~57 hours**  |
+
+  
 # Reproducibility
+
+The `.ipynb` codes are fully reproducible.
+
+
