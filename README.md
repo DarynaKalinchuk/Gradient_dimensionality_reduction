@@ -27,7 +27,7 @@ The codes have been recently tested on a smaller model due to `dgx-h100-em2` una
 
 They should run without issues on `OLMo-2-1124-7B-SFT`.
 
-### Example commands:
+**Example commands:**
 
 - Full gradient, train set:
   
