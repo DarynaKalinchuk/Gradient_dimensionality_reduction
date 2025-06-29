@@ -39,7 +39,7 @@ They should run without issues on `OLMo-2-1124-7B-SFT`.
 
 - Projected gradient to dimension 2048000, using Rademacher Random Projection (= **default**), test set:
 
-  `sbatch extract_grads.sbatch allenai/OLMo-2-1124-7B-SFT daryna3325/HFH4_ultrachat_200k_first500_samples 0 test_sft sft store --random_projection 2048000`
+  `sbatch extract_grads.sbatch allenai/OLMo-2-1124-7B-SFT daryna3325/HFH4_ultrachat_200k_first100_samples 0 test_sft sft store --random_projection 2048000`
 
 
 | Variable / Argument             | Description                                                                                      |
