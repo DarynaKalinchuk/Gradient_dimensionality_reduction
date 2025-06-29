@@ -20,10 +20,15 @@ They should run without issues on `OLMo-2-1124-7B-SFT`.
 **Example commands**:
 
 - Full gradient, train set:
+  
 ` sbatch extract_grads.sbatch allenai/OLMo-2-1124-7B-SFT daryna3325/sampled-tulu-1000 0 train sft store`
+
 - Projected gradient to dimension 8192, using Normal Random Projection, train set:
+  
 ` sbatch extract_grads.sbatch allenai/OLMo-2-1124-7B-SFT daryna3325/sampled-tulu-1000 0 train sft store --random_projection 8192 normal`
+
 - Projected gradient to dimension 16384, using Rademacher Random Projection (= **default**), train set:
+  
 ` sbatch extract_grads.sbatch allenai/OLMo-2-1124-7B-SFT daryna3325/sampled-tulu-1000 0 train sft store --random_projection`
 
 
