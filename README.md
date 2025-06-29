@@ -1,7 +1,7 @@
 # Context
 
-The codes above are the results for the Data Analysis Project on *Gradient dimensionality reduction for instance-based
-explainability of Large Language Models*.
+The codes above are the results for the Data Analysis Project on **Gradient dimensionality reduction for instance-based
+explainability of Large Language Models**.
 
 Many thanks to `loris3` for providing a big part of these codes. My contributions, file contents and usage are shortly explained below.
 
@@ -17,6 +17,8 @@ After clonning the repository, `.env` file should be set. Please specify your
 
   and optionally
 - `WANDB_API_KEY=""` for tracking the runtime.
+
+**extract_grads.sbatch**
 
 To submit a jon for calculation (and projection) of gradients, `extract_grads.sbatch` (which runs `extract_gradients.py`) is used. 
 
@@ -68,3 +70,7 @@ They should run without issues on `OLMo-2-1124-7B-SFT`.
 
 In `extract_gradients.py`, I mainly cleaned up the structure a bit, made argument parsing more flexible, made WANDB optional.
 
+`extract_gradients.py` uses `olmo_training_utils.py`. There was an issue with the preprocessing so all gradients resulted in 0. Using the correct chat template and 
+
+
+**exp.sbatch**
