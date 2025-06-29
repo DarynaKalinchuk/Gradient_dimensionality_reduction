@@ -56,7 +56,7 @@ They should run without issues on `OLMo-2-1124-7B-SFT`.
 | **\$8** (`--proj_dim`)          | Dimension of projected gradients (default: `16384`).                                             |
 | **\$9** (`--proj_type`)         | Type of random projection: `normal` or `rademacher` (default: `rademacher`).                     |
 
-**Additional Python Script Arguments**
+**Additional arguments**
 
 - `--gradients_per_file`  
   Number of gradients to store per output file (default: `1000`).
@@ -70,7 +70,48 @@ They should run without issues on `OLMo-2-1124-7B-SFT`.
 
 In `extract_gradients.py`, I mainly cleaned up the structure a bit, made argument parsing more flexible, made WANDB optional.
 
-`extract_gradients.py` uses `olmo_training_utils.py`. There was an issue with the preprocessing so all gradients resulted in 0. Using the correct chat template and 
+`extract_gradients.py` uses `olmo_training_utils.py`. There was an issue with the preprocessing, so all gradients resulted in 0 (the old version masked everything with -100). Main changes:
+
+- The chat template is used
+- Padding and truncation are now applied after masking
+- Messages are flattened if nested
 
 
 **exp.sbatch**
+
+To submit a jon for calculation of influence scores, `exp.sbatch` (which runs `explain.py`) is used. 
+
+**Example commands**:
+`sbatch exp.sbatch both daryna3325/sampled-tulu-1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/sampled-tulu-1000/train/main/0_1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/HFH4_ultrachat_200k_first100_samples/test_sft/main/0_100 OLMO/normal yes`
+
+## Run Parameters for `explainability_analysis`
+
+| Variable / Argument | Description |
+|---------------------|-------------|
+| **$1** (`--func`) | Influence estimation method to use. <br> **Choices:** `dot`, `cosine`, or `both`. (required) |
+| **$2** (`--dataset`) | Name of the dataset to load from the Hugging Face Hub. Format: `username/dataset_name`. (required) |
+| **$3** (`--train_data_path`) | Path to the training gradients file. (required) |
+| **$4** (`--test_data_path`) | Path to the test gradients file. (required) |
+| **$5** (`--where`) | Optional key used to determine the output directory path for results. |
+| **$6** (`--mapped`) | Whether to include full sample information in the output. <br> **Choices:** `yes` or any other value (default: `no`). |
+
+### Argument Choices
+
+- `--func`  
+  Influence estimation method:  
+  - `dot` → Dot product similarity  
+  - `cosine` → Cosine similarity  
+  - `both` → Run both methods
+
+- `--mapped`  
+  Whether to include full information from the dataset in the output JSON files:  
+  - `yes` → Includes all sample metadata from the dataset, sorted by score.  
+  - (any other value or omit) → Only stores scores.
+
+
+
+# Results linking
+
+# Runtime estimate
+
+# Reproducibility
