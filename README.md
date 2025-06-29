@@ -49,4 +49,15 @@ They should run without issues on `OLMo-2-1124-7B-SFT`.
 | **\$8** (`--proj_dim`)          | Dimension of projected gradients (default: `16384`).                                             |
 | **\$9** (`--proj_type`)         | Type of random projection: `normal` or `rademacher` (default: `rademacher`).                     |
 
+### Additional Python Script Arguments
+
+- `--gradients_per_file`  
+  Number of gradients to store per output file (default: `1000`).
+
+- `--gradients_output_path`  
+  Path where gradient files will be saved (default: `./gradients`).
+
+- `--skip_if_gradient_folder_exists`  
+  Skip extraction if output folder already exists.
+
 
