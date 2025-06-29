@@ -132,10 +132,10 @@ As for projected gradients:
 
 | Dimension   | Estimated Time |
 |-------------|----------------|
-| 2048000     | **~212 days**  |
-| 204800      | **~23 days**   |
-| 16384       | **~83 hours**  |
-| 8192        | **~57 hours**  |
+| 2,048,000     | **~212 days**  |
+| 204,800      | **~23 days**   |
+| 16,384       | **~83 hours**  |
+| 8,192        | **~57 hours**  |
 
   
 # Reproducibility
