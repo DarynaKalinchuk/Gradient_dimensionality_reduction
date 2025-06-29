@@ -80,12 +80,13 @@ In `extract_gradients.py`, I mainly cleaned up the structure a bit, made argumen
 - Messages are flattened if nested
 
 
-**exp.sbatch**
+## exp.sbatch
 
 To submit a jon for calculation of influence scores, `exp.sbatch` (which runs `explain.py`) is used. 
 
 **Example commands**:
-`sbatch exp.sbatch both daryna3325/sampled-tulu-1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/sampled-tulu-1000/train/main/0_1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/HFH4_ultrachat_200k_first100_samples/test_sft/main/0_100 OLMO/normal yes`
+
+> `sbatch exp.sbatch both daryna3325/sampled-tulu-1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/sampled-tulu-1000/train/main/0_1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/HFH4_ultrachat_200k_first100_samples/test_sft/main/0_100 OLMO/normal yes`
 
 
 | Variable / Argument | Description |
@@ -97,7 +98,7 @@ To submit a jon for calculation of influence scores, `exp.sbatch` (which runs `e
 | **$5** (`--where`) | Optional key used to determine the output directory path for results. Output path starts with "./explainability". |
 | **$6** (`--mapped`) | Whether to include full sample information in the output. <br> **Choices:** `yes` or any other value (default: `no`). |
 
-### More about argument choices
+**More about argument choices**
 
 - `--func`  
   Influence estimation method:  
@@ -122,7 +123,7 @@ Both outputs are linked to the corresponding dataset samples as follows:
 
 If the JSON files were created with `mapped = yes`:
 - Full metadata about each sample is included in the JSON output.
-- The results are sorted in descending order by score, making it easy to identify the most influential training samples.
+- The results are sorted in descending order by score, making it easier to identify the most influential training samples.
 
 
 # Runtime estimate
@@ -144,7 +145,7 @@ Below are time estimates for different dimensions, based on the corresponding ru
   
 # Reproducibility
 
-The `.ipynb` codes are fully reproducible.
+The results in `.ipynb` are fully reproducible.
 
 Reproducibility of SLURM codes could have been improved but I realized this too late to be able to obtain new results. Furthermore, my understanding is that it cannot be made perfectly reproducible due to CUDA non-determinism and floating-point computation variability.
 
