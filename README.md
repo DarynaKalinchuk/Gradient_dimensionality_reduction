@@ -84,7 +84,6 @@ To submit a jon for calculation of influence scores, `exp.sbatch` (which runs `e
 **Example commands**:
 `sbatch exp.sbatch both daryna3325/sampled-tulu-1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/sampled-tulu-1000/train/main/0_1000 /srv/home/users/kalinchukd23cs/gradient_dimensionality_reduction_dap/gradients/normal_204800/OLMo-2-1124-7B-SFT/HFH4_ultrachat_200k_first100_samples/test_sft/main/0_100 OLMO/normal yes`
 
-## Run Parameters for `explainability_analysis`
 
 | Variable / Argument | Description |
 |---------------------|-------------|
@@ -92,25 +91,25 @@ To submit a jon for calculation of influence scores, `exp.sbatch` (which runs `e
 | **$2** (`--dataset`) | Name of the dataset to load from the Hugging Face Hub. Format: `username/dataset_name`. (required) |
 | **$3** (`--train_data_path`) | Path to the training gradients file. (required) |
 | **$4** (`--test_data_path`) | Path to the test gradients file. (required) |
-| **$5** (`--where`) | Optional key used to determine the output directory path for results. |
+| **$5** (`--where`) | Optional key used to determine the output directory path for results. Output path starts with "./explainability". |
 | **$6** (`--mapped`) | Whether to include full sample information in the output. <br> **Choices:** `yes` or any other value (default: `no`). |
 
-### Argument Choices
+### More about argument choices
 
 - `--func`  
   Influence estimation method:  
-  - `dot` → Dot product similarity  
-  - `cosine` → Cosine similarity  
-  - `both` → Run both methods
+  - `dot` = Dot product similarity  
+  - `cosine` = Cosine similarity  
+  - `both` = Run both methods
 
 - `--mapped`  
   Whether to include full information from the dataset in the output JSON files:  
-  - `yes` → Includes all sample metadata from the dataset, sorted by score.  
-  - (any other value or omit) → Only stores scores.
-
+  - `yes` = Includes all sample metadata from the dataset, sorted by score in descending order.  
+  - (any other value or omit) = Only stores scores, unsorted.
 
 
 # Results linking
+
 
 # Runtime estimate
 
