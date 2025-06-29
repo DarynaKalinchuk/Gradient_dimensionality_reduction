@@ -12,6 +12,12 @@ The end results are contained in `DAP_main_results.ipynb` file. These will be ex
 `Data_sets_sample_and_analysis.ipynb` contains codes that were used to sample and push the train and test data sets to HF. I had to exclude 1 sample from the analysis (with id open_orca_t0.1598436).
 
 # Foundational codes
+After clonning the repository, `.env` file should be set. Please specify your 
+- `HUGGINGFACE_TOKEN=""`
+
+  and optionally
+- `WANDB_API_KEY=""` for tracking the runtime.
+
 To submit a jon for calculation (and projection) of gradients, `extract_grads.sbatch` is used. 
 
 The codes have been recently tested on a smaller model due to `dgx-h100-em2` unavailability.
@@ -31,5 +37,16 @@ They should run without issues on `OLMo-2-1124-7B-SFT`.
   
 ` sbatch extract_grads.sbatch allenai/OLMo-2-1124-7B-SFT daryna3325/sampled-tulu-1000 0 train sft store --random_projection`
 
+| Variable / Argument             | Description                                                                                      |
+| ------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **\$1** (model)                 | Hugging Face model name. Format: `username/model_name`                                           |
+| **\$2** (dataset)               | Hugging Face dataset name. Format: `username/dataset_name`                                       |
+| **\$3** (checkpoint\_nr)        | Checkpoint index to extract gradients for (integer, starting at 0).                              |
+| **\$4** (`--dataset_split`)     | Dataset split to use                                                                             |
+| **\$5** (`--paradigm`)          | Extraction paradigm: `pre`, `mlm`, or `sft`                                                      |
+| **\$6** (`--mode`)              | Whether to store individual gradients (`store`) or their mean (`store_mean`)                     |
+| **\$7** (`--random_projection`) | Enable random projection of gradients.                                                           |
+| **\$8** (`--proj_dim`)          | Dimension of projected gradients (default: `16384`).                                             |
+| **\$9** (`--proj_type`)         | Type of random projection: `normal` or `rademacher` (default: `rademacher`).                     |
 
 
