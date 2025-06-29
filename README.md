@@ -82,7 +82,7 @@ In `extract_gradients.py`, I mainly cleaned up the structure a bit, made argumen
 
 ## exp.sbatch
 
-To submit a jon for calculation of influence scores, `exp.sbatch` (which runs `explain.py`) is used. 
+To submit a job for calculation of influence scores, `exp.sbatch` (which runs `explain.py`) is used. 
 
 **Example commands**:
 
