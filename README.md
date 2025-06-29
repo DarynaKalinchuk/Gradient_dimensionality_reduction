@@ -110,6 +110,12 @@ To submit a jon for calculation of influence scores, `exp.sbatch` (which runs `e
 
 # Results linking
 
+The results for gradient calculation are saved as .pt files.
+The results for explainability are saved as JSON files.
+
+Both are linked to the corresponding sample in the following way: grad_i (score_i) corresponds to gradient (score) for sample_i in the HF dataset. 
+
+If the scores in the JSON file were created with `mapped = yes`, then the full data about the samples is included within the file as well. It is also sorted in descending order, which makes it easy to see the most influential train samples.
 
 # Runtime estimate
 
