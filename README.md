@@ -136,11 +136,11 @@ Below are time estimates for different dimensions, based on the corresponding ru
 
 | Dimension   | Estimated Time | Estimated Storage (float16) |
 |-------------|----------------|----------------|
-| full (16,777,216) | **~53 hours**  | **11.91 TB** | 
-| 2,048,000         | **~212 days**  | **1.42 TB** | 
-| 204,800           | **~23 days**   | **145.34 GB** | 
-| 16,384            | **~83 hours**  | **11.62 GB** | 
-| 8,192             | **~57 hours**  | **5.81 GB** | 
+| full (16,777,216) | **~53 hours**  | **~11.91 TB** | 
+| 2,048,000         | **~212 days**  | **~1.42 TB** | 
+| 204,800           | **~23 days**   | **~145.34 GB** | 
+| 16,384            | **~83 hours**  | **~11.62 GB** | 
+| 8,192             | **~57 hours**  | **~5.81 GB** | 
 
   
 # Reproducibility
