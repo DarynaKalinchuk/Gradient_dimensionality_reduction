@@ -42,4 +42,4 @@ python3 extract_gradients.py \
     --mode=$6 \
     $RANDOM_PROJ \
     $PROJ_ARGS \
-    --gradients_per_file=2
+    --gradients_per_file=1000
